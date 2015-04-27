@@ -1,0 +1,33 @@
+<!-- import polymer-element's definition -->
+<link rel="import" href="../../../packages/paper_elements/paper_input_decorator.html">
+<link rel="import" href="../../../packages/paper_elements/paper_button.html">
+<link rel="import" href="../../../packages/core_elements/core_toolbar.html">
+<link rel="import" href="../../../packages/core_elements/core_icon.html">
+<link rel="import" href="../../../packages/core_elements/core_icon_button.html">
+
+<polymer-element name="search-item" flex horizontal layout>
+    <template>
+        <style>
+            .cell {
+                vertical-align: middle;
+                line-height: 42px;
+                height: 42px;
+                overflow: hidden;
+            }
+        </style>
+        <template if="{{selected}}">
+            <core-icon-button icon="check"></core-icon-button>
+        </template>
+        <template if="{{!selected}}">
+            <core-icon-button icon="check-box-outline-blank"></core-icon-button>
+        </template>
+        <div id="content"></div>
+        <template repeat="{{action in itemActions}}">
+            <core-icon-button on-click="{{onItemActionClick}}"
+                              data-name="{{action.name}}"
+                              icon="{{action.icon}}">
+            </core-icon-button>
+        </template>
+    </template>
+    <script type="application/dart" src="search_item.dart"></script>
+</polymer-element>

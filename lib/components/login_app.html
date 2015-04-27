@@ -1,0 +1,31 @@
+
+<!-- import polymer-element's definition -->
+<link rel="import" href="../../../packages/paper_elements/paper_input_decorator.html">
+<link rel="import" href="../../../packages/paper_elements/paper_button.html">
+<link rel="import" href="../../../packages/core_elements/core_toolbar.html">
+<link rel="import" href="../../../packages/core_elements/core_icon.html">
+
+<polymer-element name="login-app" flex vertical layout>
+  <template>
+  
+      <div flex class="activityContent">
+        <paper-input-decorator floatingLabel label="Your Name">
+            <input type="text" value="{{inputName}}">
+        </paper-input-decorator>
+        <paper-input-decorator floatingLabel label="Password">
+            <input type="password" value="{{inputPassword}}">
+        </paper-input-decorator>
+      </div>
+      
+      <core-toolbar>    
+        <div flex>&nbsp;</div>
+        <paper-button on-click="{{login}}">
+          <core-icon icon="check"></core-icon>
+          Login
+        </paper-button>  
+        <div flex>&nbsp;</div>
+    </core-toolbar>
+      
+  </template>
+  <script type="application/dart" src="login_app.dart"></script>
+</polymer-element>

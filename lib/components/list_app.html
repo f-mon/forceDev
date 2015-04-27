@@ -1,0 +1,44 @@
+
+<!-- import polymer-element's definition -->
+<link rel="import" href="../../../packages/polymer/polymer.html">
+<link rel="import" href="../../../packages/paper_elements/paper_button.html">
+<link rel="import" href="../../../packages/paper_elements/paper_input.html">
+<link rel="import" href="../../../packages/paper_elements/paper_input_decorator.html">
+<link rel="import" href="../../../packages/paper_elements/paper_autogrow_textarea.html">
+<link rel="import" href="../../../packages/core_elements/core_toolbar.html">
+<link rel="import" href="../../../packages/core_elements/core_icon_button.html">
+<link rel="import" href="../../../packages/core_elements/core_header_panel.html">
+
+<link rel="import" href="../../../packages/forceDev/newt/search_result.html">
+
+<polymer-element name="list-app" flex vertical layout>
+  <template>
+      
+        <core-toolbar>
+            <paper-input label="Search" value="{{searchInput['filterA']}}" flex></paper-input>
+            <core-icon-button icon="search" on-click="{{search}}" ></core-icon-button>
+        </core-toolbar>
+        
+        <search-result data="{{data}}" loading="{{loading}}"
+                       on-item-action="{{onItemAction}}"
+                       on-search-action="{{onSearchAction}}">
+            <ul data-specs="item-actions">
+                <li name="azione1" label="Azione Uno" actionIcon="cloud-download" ></li>
+                <li name="azione2" label="Azione Due" actionIcon="explore" ></li>
+                <li name="azione3" label="Azione Tre" actionIcon="drafts" ></li>
+            </ul>
+            <ul data-specs="search-actions">
+                <li name="azione1" label="Azione Uno" actionIcon="cloud-download" ></li>
+                <li name="azione2" label="Azione Due" actionIcon="explore" ></li>
+                <li name="azione3" label="Azione Tre" actionIcon="drafts" ></li>
+            </ul>
+            <template id="rowTemplate">
+                <span class="cell">Item  {{model}}</span>
+                <span class="cell">.. {{model['name']}} {{selected}} </span>
+                <span class="cell" flex>&nbsp;</span>
+            </template>
+        </search-result>
+      
+  </template>
+  <script type="application/dart" src="list_app.dart"></script>
+</polymer-element>

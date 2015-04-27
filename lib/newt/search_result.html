@@ -1,0 +1,40 @@
+<!-- import polymer-element's definition -->
+<link rel="import" href="../../../packages/paper_elements/paper_input_decorator.html">
+<link rel="import" href="../../../packages/paper_elements/paper_button.html">
+<link rel="import" href="../../../packages/core_elements/core_toolbar.html">
+<link rel="import" href="../../../packages/core_elements/core_icon.html">
+<link rel="import" href="../../../packages/core_elements/core_scroll_header_panel.html">
+<link rel="import" href="../../../packages/core_elements/core_list_dart.html">
+<link rel="import" href="../../../packages/core_elements/core_icon_button.html">
+
+<link rel="import" href="../../../packages/forceDev/newt/search_item.html">
+
+<polymer-element name="search-result" flex vertical layout>
+    <template>
+
+        <core-list-dart data="{{data}}" flex height="18">
+            <template>
+                <search-item model="{{model}}">
+                </search-item>
+            </template>
+        </core-list-dart>
+
+        <core-toolbar>
+            <template if="{{loading}}">
+                <core-icon icon="cloud-download"></core-icon>
+            </template>
+            <template repeat="{{action in searchActions}}">
+                <core-icon-button on-click="{{onSearchActionClick}}"
+                                  data-name="{{action.name}}"
+                                  icon="{{action.icon}}">
+                </core-icon-button>
+            </template>
+            <div flex>&nbsp;</div>
+            <div>
+                {{selections.length}} selected
+            </div>
+        </core-toolbar>
+
+    </template>
+    <script type="application/dart" src="search_result.dart"></script>
+</polymer-element>

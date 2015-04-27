@@ -1,0 +1,34 @@
+<!-- import polymer-element's definition -->
+<link rel="import" href="../../../packages/paper_elements/paper_input_decorator.html">
+<link rel="import" href="../../../packages/paper_elements/paper_button.html">
+<link rel="import" href="../../../packages/core_elements/core_toolbar.html">
+<link rel="import" href="../../../packages/core_elements/core_icon.html">
+<link rel="import" href="../../../packages/core_elements/core_icon_button.html">
+<link rel="import" href="../../../packages/paper_elements/paper_autogrow_textarea.html">
+
+
+<polymer-element name="bean-editor" flex vertical layout>
+    <template>
+
+        <div flex>
+            <paper-input-decorator floatingLabel flex label="CampoA">
+                <paper-autogrow-textarea>
+                    <textarea></textarea>
+                </paper-autogrow-textarea>
+            </paper-input-decorator>
+        </div>
+
+        <core-toolbar>
+            <div flex>&nbsp;</div>
+            <template repeat="{{action in editActions}}">
+                <core-icon-button on-click="{{onEditActionClick}}"
+                              data-name="{{action.name}}"
+                              icon="{{action.icon}}">
+                </core-icon-button>
+            </template>
+        </core-toolbar>
+
+
+    </template>
+    <script type="application/dart" src="bean_editor.dart"></script>
+</polymer-element>

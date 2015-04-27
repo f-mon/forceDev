@@ -1,0 +1,31 @@
+
+<!-- import polymer-element's definition -->
+<link rel="import" href="../../../packages/polymer/polymer.html">
+<link rel="import" href="../../../packages/paper_elements/paper_button.html">
+<link rel="import" href="../../../packages/paper_elements/paper_input_decorator.html">
+<link rel="import" href="../../../packages/paper_elements/paper_autogrow_textarea.html">
+<link rel="import" href="../../../packages/core_elements/core_toolbar.html">
+<link rel="import" href="../../../packages/core_elements/core_icon.html">
+
+<polymer-element name="form-editor" flex vertical layout>
+  <template>
+      
+      <div flex class="activityContent">
+        <paper-input-decorator floatingLabel flex label="Code Editor form">
+            <paper-autogrow-textarea>
+                <textarea></textarea>
+            </paper-autogrow-textarea>
+        </paper-input-decorator>
+      </div>
+      
+      <core-toolbar>    
+        <div flex>&nbsp;</div>
+        <paper-button on-click="{{lauchForm}}">
+          <core-icon icon="check"></core-icon>
+          Launch
+        </paper-button>  
+    </core-toolbar>
+      
+  </template>
+  <script type="application/dart" src="form_editor.dart"></script>
+</polymer-element>

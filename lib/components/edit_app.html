@@ -1,0 +1,25 @@
+
+<!-- import polymer-element's definition -->
+<link rel="import" href="../../../packages/polymer/polymer.html">
+<link rel="import" href="../../../packages/paper_elements/paper_button.html">
+<link rel="import" href="../../../packages/paper_elements/paper_input.html">
+<link rel="import" href="../../../packages/paper_elements/paper_input_decorator.html">
+<link rel="import" href="../../../packages/core_elements/core_toolbar.html">
+<link rel="import" href="../../../packages/core_elements/core_icon_button.html">
+<link rel="import" href="../../../packages/core_elements/core_header_panel.html">
+
+<link rel="import" href="../../../packages/forceDev/newt/bean_editor.html">
+
+<polymer-element name="edit-app" flex vertical layout>
+    <template>
+
+        <core-toolbar>
+
+        </core-toolbar>
+
+        <bean-editor model="{{model}}">
+        </bean-editor>
+
+    </template>
+    <script type="application/dart" src="edit-app.dart"></script>
+</polymer-element>
